@@ -1,0 +1,25 @@
+{
+  "name": "gulp-sass-to-postcss-mixins",
+  "version": "0.0.1",
+  "description": "Converts sass syntax mixins(+func) to PostCSS compatible mixins.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akella/gulp-sass-to-postcss-mixins.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "sass",
+    "postcss",
+    "mixins"
+  ],
+  "author": "Yuri Artiukh <akella.a@gmail.com> (http://riverco.de)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akella/gulp-sass-to-postcss-mixins/issues"
+  },
+  "homepage": "https://github.com/akella/gulp-sass-to-postcss-mixins#readme"
+}
