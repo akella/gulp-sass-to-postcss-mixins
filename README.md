@@ -45,3 +45,9 @@ And converts them to this (this is [postcss-mixins](https://github.com/postcss/p
 	@mixin r
 		display: block
 ```
+
+
+[travis-url]: http://travis-ci.org/akella/gulp-sass-to-postcss-mixins
+[travis-image]: https://secure.travis-ci.org/akella/gulp-sass-to-postcss-mixins.svg?branch=master
+[npm-url]: https://npmjs.org/package/gulp-sass-to-postcss-mixins
+[npm-image]: https://badge.fury.io/js/gulp-sass-to-postcss-mixins.svg
