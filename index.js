@@ -14,7 +14,7 @@ module.exports = function(options) {
       }
 
       // finding valid sass syntax mixins, check testcase here http://regexr.com/3e1hf
-      var sassregexp = new RegExp(/(^([ \t]|)+)[+][\w.\-\_]*($|[ \t]+|[(]([0-9A-Z$a-z, ]|)+[)]([ \t]+|))$/, 'gm');
+      var sassregexp = new RegExp(/(^([ \t]|)+)[+][\w.\-\_]*($|[ \t]+|[(]([0-9A-Z$a-z, ]|)+[)]([ \t]+|))$/gm);
 
       // fixing each of them
       function fixFoundMixins(match){
