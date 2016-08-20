@@ -1,0 +1,17 @@
+$var1: 12px
+@define-mixin test $var 
+	width: $var
+	height: $var
+@define-mixin r $size:200
+	@media (max-width: $(size)px)
+		@mixin-content
+
+
+.box
+	@mixin test $var1 
+	@mixin r 300 
+		display: none
+	@mixin r
+		display: block
+	div
+		display: block

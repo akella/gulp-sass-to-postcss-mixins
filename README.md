@@ -17,8 +17,8 @@ Then, add it to your `gulpfile.js`:
 ```javascript
 var sassmixins = require('gulp-sass-to-postcss-mixins');
 
-gulp.task(‘css’, function(){
-  gulp.src([’source/style.sass’])
+gulp.task('css', function(){
+  gulp.src(['source/style.sass'])
     .pipe(sassmixins())
 		// running postcss-mixins plugin here, or [PreCSS](https://github.com/jonathantneal/precss)
     .pipe(gulp.dest('build/'));
@@ -28,7 +28,7 @@ gulp.task(‘css’, function(){
 
 ### What it does
 It takes valid sass-syntax mixins like this:
-```css
+```sass
 .box
 	+test($var1)
 	+r(300)
@@ -37,7 +37,7 @@ It takes valid sass-syntax mixins like this:
 		display: block
 ```
 And converts them to this (this is [postcss-mixins](https://github.com/postcss/postcss-mixins) syntax):
-```css
+```sass
 .box
 	@mixin test $var1 
 	@mixin r 300 
