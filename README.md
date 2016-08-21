@@ -16,11 +16,14 @@ Then, add it to your `gulpfile.js`:
 ### Example usage
 ```javascript
 var sassmixins = require('gulp-sass-to-postcss-mixins');
+var sugarss    = require('sugarss');
+var precss     = require('precss');
 
 gulp.task('css', function(){
   gulp.src(['source/style.sass'])
     .pipe(sassmixins())
-		// running postcss-mixins plugin here, or [PreCSS](https://github.com/jonathantneal/precss)
+	// running postcss-mixins plugin here, or [PreCSS](https://github.com/jonathantneal/precss)
+    .pipe(postcss([precss],{ parser: sugarss }))
     .pipe(gulp.dest('build/'));
 });
 ```
@@ -31,21 +34,42 @@ It takes valid sass-syntax mixins like this:
 ```sass
 .box
 	+test($var1)
-	+r(300)
+	+responsive(300)
 		display: none
-	+r
+	+responsive
 		display: block
 ```
 And converts them to this (this is [postcss-mixins](https://github.com/postcss/postcss-mixins) syntax):
 ```sass
 .box
 	@mixin test $var1 
-	@mixin r 300 
+	@mixin responsive 300 
 		display: none
-	@mixin r
+	@mixin responsive
 		display: block
 ```
-
+Which is then transformed with PreCSS to this CSS:
+```css
+.box {
+    // test mixin
+    width: 12px;
+    height: 12px;
+}
+.box div {
+    display: block;
+}
+// responsive mixin
+@media (max-width: 300px) {
+    .box {
+        display: none;
+    }
+}
+@media (max-width: 200px) {
+    .box {
+        display: block;
+    }
+}
+```
 
 [travis-url]: http://travis-ci.org/akella/gulp-sass-to-postcss-mixins
 [travis-image]: https://secure.travis-ci.org/akella/gulp-sass-to-postcss-mixins.svg?branch=master
