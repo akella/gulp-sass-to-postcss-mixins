@@ -51,14 +51,14 @@ And converts them to this (this is [postcss-mixins](https://github.com/postcss/p
 Which is then transformed with PreCSS to this CSS:
 ```css
 .box {
-    // test mixin
+    /* test mixin, width-height */
     width: 12px;
     height: 12px;
 }
 .box div {
     display: block;
 }
-// responsive mixin
+/* responsive mixin, with default argument 200px */
 @media (max-width: 300px) {
     .box {
         display: none;
