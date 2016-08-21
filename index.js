@@ -18,7 +18,7 @@ module.exports = function(options) {
 
       // fixing each of them
       function fixFoundMixins(match){
-        return match.replace(/[(),]/g,' ').replace(/(^([ \t]|)+)[+]/g,'$1@mixin ');
+        return match.replace(/[()]/g,' ').replace(/(^([ \t]|)+)[+]/g,'$1@mixin ');
       }
 
       function doReplace() {
