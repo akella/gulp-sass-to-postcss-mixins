@@ -1,6 +1,6 @@
 {
   "name": "gulp-sass-to-postcss-mixins",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Converts sass syntax mixins(+func) to PostCSS compatible mixins.",
   "main": "index.js",
   "scripts": {
